@@ -1,0 +1,214 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+  
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+}
+
+@keyframes mymove {
+    0%   {opacity: 0;}
+    25%  {opacity: 1;}
+    75%   {opacity: 1;}
+    100%  {opacity: 0;}
+}
+
+/* ===== Scrollbar CSS ===== */
+  /* Firefox */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: #36652f #cdd6cd;
+  }
+
+  /* Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    width: 16px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: #cdd6cd;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: #36652f;
+    border-radius: 16px;
+    border: 0px none #ffffff;
+  }
+
+
+#overlay {
+    display: none;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 1;
+    background-color: rgba(0,0,0,1);
+}
+
+div#chapterTitleBox {
+   display: none;
+   position: fixed;
+   width: max(50vw, 250px);
+   background-color: black;
+   color: #fff;
+   z-index: 1;
+   left: 25vw;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   flex-wrap: wrap;
+   align-content: center;
+   flex-direction: column;
+}
+
+#overlay.animation, #overlay.animation>div#chapterTitleBox {
+    display: flex;
+    animation: mymove 4s;
+    animation-iteration-count: 1;
+}
+
+#chapterTitleBox h1 {
+    text-align: center;
+    margin: 15px;
+    font-size: 56px;
+}
+
+#chapterTitleBox p {
+   display: inline-block;
+   margin: 30px;
+   font-size: 48px;
+   text-align: center;
+}
+
+p {
+    font-weight: 600;
+    font-size: 24px;
+}
+
+@media (max-width: 1200px) {
+    p {
+        font-size: 22px;
+    }
+}
+
+@media (max-width: 1000px) {
+    p {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    p {
+        font-size: 18px;
+        line-height: 2;
+    }
+}
+
+@media (max-width: 480px) {
+    p {
+        font-size: 14px;
+    }
+}
+
+#wrapper {
+    max-width: 800px;
+    position: relative;
+    height: 100vh;
+    padding: 0 20px;
+    margin: 0 auto;
+}
+
+button {
+    background-color: rgb(179 198 175);
+    width: calc(100% - 40px);
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #000;
+    margin: 0 auto 10px auto;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+@media (hover: hover) and (pointer: fine) {
+   
+button:hover {
+    background-color: rgb(190, 190, 190);
+}
+  }
+
+#buttonBox {
+    position: absolute;
+    bottom: 55px;
+    left: 0;
+    right: 0;
+}
+
+#storyBox {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    overflow: auto;
+    padding: 20px 0 0 0;
+    height: calc(100vh - 250px);
+    background-color: rgba(255,255,255,.5);
+    box-shadow: 0px 0px 10px 10px rgba(255,255,255,.5);
+}
+
+h1#chapter {
+    position: absolute;
+    top: 10px;
+    width: 100%;
+    text-align: center;
+}
+
+#parallaxBackground {
+    filter: hue-rotate(225deg) contrast(1.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+.parallaxLayer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-size: 200vh auto;
+    background-position: bottom;
+    animation-name: moveLayers;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+@keyframes moveLayers {
+    from {background-position-x: 0px;}
+    to  {background-position-x: 200vh;}
+}
+
+.parallaxLayer:nth-child(1) {
+    animation-duration: 1440s;
+}
+.parallaxLayer:nth-child(2) {
+    animation-duration: 1000s;
+}
+.parallaxLayer:nth-child(3) {
+    animation-duration: 640s;
+}
+.parallaxLayer:nth-child(4) {
+    animation-duration: 360s;
+}
+.parallaxLayer:nth-child(5) {
+    animation-duration: 160s;
+}
+.parallaxLayer:nth-child(6) {
+    animation-duration: 40s;
+}
