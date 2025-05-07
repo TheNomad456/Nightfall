@@ -17,4 +17,4 @@
 
 ## Credits
 
-- Story & Design: *Your name*
+- Story & Design: Miklós Vajkai
